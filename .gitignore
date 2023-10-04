@@ -5,3 +5,4 @@ scrnaseq_files
 .Rhistory
 data/
 fastqc_results/
+fastqc/scrnaseq
