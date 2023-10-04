@@ -6,3 +6,8 @@ scrnaseq_files
 data/
 fastqc_results/
 fastqc/scrnaseq
+**.zip
+**.html
+**.sif 
+e*.txt
+o*.txt

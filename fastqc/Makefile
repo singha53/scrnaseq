@@ -21,4 +21,7 @@ sockeye_pull:
 	singularity pull --name scrnaseq docker://$(DOCKERHUB_USERNAME)/$(IMAGE_NAME):$(IMAGE_VERSION)
 
 sockeye_fastqc:
-	./fastqc.sh /project/st-singha53-1/datasets/fentanyl/scrnaseq
+	sh fastqc.sh /project/st-singha53-1/datasets/fentanyl/scrnaseq
+
+qstat:
+	qstat -u $(USER)
