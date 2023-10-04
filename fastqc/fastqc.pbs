@@ -1,0 +1,18 @@
+#!/bin/bash
+#PBS -l walltime=36:00:00,select=1:ncpus=12:mem=186gb
+#PBS -A st-singha53-1
+#PBS -N fastqc
+#PBS -M amrit.singh@ubc.ca
+#PBS -o fastqc.txt
+#PBS -e fastqc.txt
+  
+#############################################################################
+
+module load apptainer
+
+DATA=/project/st-singha53-1/datasets/fentanyl/scrnaseq
+
+cd $PBS_O_WORKDIR
+apptainer exec --bind $DATA /project/st-singha53-1/singha53/scrnaseq/fastqc/scrnaseq
+make sockeye_fastqc
+exit
