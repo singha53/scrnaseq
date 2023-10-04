@@ -35,12 +35,14 @@ See Raw data processing [here](https://www.sc-best-practices.org/introduction/ra
 
 ### 1. count number of reads in fastq files
 
-- list fastq failes
+-   list fastq failes
+
 ```{bash, echo = TRUE}
 ls -a data
 ```
 
-- count number of reads in fastq files
+-   count number of reads in fastq files
+
 ```{bash, echo = TRUE}
 for file in GEX-R3-AS-12162022_S1_L001_R1_001.fastq.gz GEX-R3-AS-12162022_S1_L001_R1_001.fastq.gz
 do
@@ -53,7 +55,7 @@ done
 
 ### 2. Run [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
-- we will use a linux based docker image for [fastq](https://hub.docker.com/r/staphb/fastqc/dockerfile), since ARC is linux-based
+-   we will use a linux based docker image for [fastq](https://hub.docker.com/r/staphb/fastqc/dockerfile), since ARC is linux-based
 
 ```{bash}
 cat fastqc/Dockerfile
@@ -63,7 +65,7 @@ cat fastqc/Dockerfile
 
 ### 2. Run [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
-- create Makefile to run docker image
+-   create Makefile to run docker image
 
 ```{bash}
 cat fastqc/Makefile
@@ -74,14 +76,6 @@ make fastqc
 ```
 
 ## Run fastqc on Sockeye
-
-
-
-
-
-
-
-
 
 ## Analysis
 
