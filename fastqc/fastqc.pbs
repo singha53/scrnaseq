@@ -1,8 +1,8 @@
 #!/bin/bash
-#PBS -l walltime=36:00:00,select=1:ncpus=12:mem=186gb
-#PBS -A st-singha53-1
+#PBS -l walltime=5:00:00,select=1:ncpus=12:mem=64gb
+#PBS -A ALLOCATION_CODE
 #PBS -N fastqc
-#PBS -M amrit.singh@ubc.ca
+#PBS -M EMAIL
 #PBS -o fastqc.txt
 #PBS -e fastqc.txt
   
