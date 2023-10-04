@@ -69,6 +69,8 @@ cat fastqc/Dockerfile
 cat fastqc/Makefile
 ```
 
+## Run fastqc on Sockeye
+
 
 
 
