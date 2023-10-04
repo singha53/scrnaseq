@@ -69,6 +69,10 @@ cat fastqc/Dockerfile
 cat fastqc/Makefile
 ```
 
+```{bash, eval=FALSE}
+make fastqc
+```
+
 ## Run fastqc on Sockeye
 
 
