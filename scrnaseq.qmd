@@ -58,7 +58,7 @@ done
 -   we will use a linux based docker image for [fastq](https://hub.docker.com/r/staphb/fastqc/dockerfile), since ARC is linux-based
 
 ```{bash}
-cat fastqc/Dockerfile
+cat Dockerfile
 ```
 
 ## Demo - scRNAseq data processing
@@ -74,6 +74,11 @@ cat fastqc/Makefile
 ```{bash, eval=FALSE}
 make fastqc
 ```
+
+## Sockeye workflow
+
+<img src="docs/gitflow.png"/>
+
 
 ## Create custom reference
 
