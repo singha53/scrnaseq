@@ -1,10 +1,11 @@
 .DS_Store
+.Rhistory
 .Rproj.user
 scrnaseq.html
 scrnaseq_files
 .Rhistory
 sample_reads/
-ref/
+ref/rat_ref
 fastqc_results/
 fastqc/scrnaseq
 **.zip
