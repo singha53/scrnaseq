@@ -10,7 +10,7 @@
 
 module load apptainer
 
-DATA=/project/st-singha53-1/datasets/fentanyl/scrnaseq
+DATA=/project/st-singha53-1/singha53/scrnaseq/data
 
 cd $PBS_O_WORKDIR
-apptainer run -B $DATA /project/st-singha53-1/singha53/scrnaseq/fastqc/scrnaseq make sockeye_fastqc
+apptainer run -B $DATA /project/st-singha53-1/singha53/scrnaseq/scrnaseq.sif make sockeye_fastqc

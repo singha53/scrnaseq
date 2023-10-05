@@ -13,3 +13,4 @@ run:
 # push docker image to dockerhub
 push:
 	docker push $(DOCKERHUB_USERNAME)/$(IMAGE_NAME):$(IMAGE_VERSION)
+
