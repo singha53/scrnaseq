@@ -14,3 +14,9 @@ run:
 push:
 	docker push $(DOCKERHUB_USERNAME)/$(IMAGE_NAME):$(IMAGE_VERSION)
 
+<<<<<<< HEAD
+=======
+sockeye_pull:
+	module load singularity; \
+	singularity pull --name scrnaseq.sif docker://$(DOCKERHUB_USERNAME)/$(IMAGE_NAME):$(IMAGE_VERSION)
+>>>>>>> aad862195c1e75bdf75b149b43ff1e50c4381a7e
