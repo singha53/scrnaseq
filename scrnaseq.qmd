@@ -75,7 +75,12 @@ cat fastqc/Makefile
 make fastqc
 ```
 
-## Run fastqc on Sockeye
+## Create custom reference
+
+1. First, locate the reference genome FASTA and GTF files for your species. If the species is available from the Ensembl database, we recommend using the files from there. The GTF files from Ensembl contain optional tags that make filtering easy.
+
+[Ensemble](https://useast.ensembl.org/index.html)
+[10x custom ref](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/tutorial_mr)
 
 ## Analysis
 

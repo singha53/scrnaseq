@@ -3,7 +3,8 @@
 scrnaseq.html
 scrnaseq_files
 .Rhistory
-data/
+sample_reads/
+ref/
 fastqc_results/
 fastqc/scrnaseq
 **.zip

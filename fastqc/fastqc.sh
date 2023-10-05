@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-RUN_PATH=$1
-cd $RUN_PATH
-for file in $(ls $RUN_PATH)
+
+# https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help
+FASTQ_FILES=$1
+OUTPUT=$2
+
+for file in $(ls $FASTQ_FILES)
 do
-    SAMPLE=`basename $file`
-    fastqc -t 5 ${SAMPLE} -o /scratch/st-singha53-1/singha53/scrnaseq/fastqc/
+    echo $1$file
+    fastqc -t 5 $1$file -o $OUTPUT
 done
