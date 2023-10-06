@@ -4,7 +4,8 @@
 scrnaseq.html
 scrnaseq_files
 .Rhistory
-sample_reads/
+sample_reads/*.gz
+seqtk/
 ref/rat_ref
 ref/Rattus_norvegicus_mRatBN7_2/
 fastqc_results/

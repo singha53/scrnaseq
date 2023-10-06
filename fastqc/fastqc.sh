@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 # https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help
-FASTQ_FILES=$1
-OUTPUT=$2
-
-for file in $(ls $FASTQ_FILES)
+FASTQ_FILES=$(find $1 -name *.fq)
+echo $FASTQ_FILES
+OUTPUT=fastqc_results
+mkdir -p $OUTPUT
+for file in $FASTQ_FILES
 do
-    echo $1$file
-    fastqc -t 5 $1$file -o $OUTPUT
+    echo $file
+    fastqc -t 5 $file -o $OUTPUT
 done
