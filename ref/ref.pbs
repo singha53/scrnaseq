@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -l walltime=5:00:00,select=1:ncpus=12:mem=64gb
+#PBS -A st-singha53-1
+#PBS -N ref
+#PBS -M amrit.singh@ubc.ca
+#PBS -o oref.txt
+#PBS -e eref.txt
+  
+#############################################################################
+
+module load apptainer
+
+DATA=/project/st-singha53-1/singha53/scrnaseq/ref/rat_ref
+
+cd $PBS_O_WORKDIR
+apptainer run -B $DATA /project/st-singha53-1/singha53/scrnaseq/scrnaseq.sif make mkref

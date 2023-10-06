@@ -15,6 +15,6 @@ mkgtf:
 
 mkref:
 	cellranger mkref \
-	  --genome=Rattus_norvegicus.mRatBN7.2 \
-	  --fasta=Rattus_norvegicus.mRatBN7.2.dna.toplevel.fa \
-	  --genes=Rattus_norvegicus.mRatBN7.2.filtered.gtf
+	  --genome=Rattus_norvegicus_mRatBN7_2 \
+	  --fasta=/project/st-singha53-1/singha53/scrnaseq/ref/rat_ref/Rattus_norvegicus.mRatBN7.2.dna.toplevel.fa \
+	  --genes=/project/st-singha53-1/singha53/scrnaseq/ref/rat_ref/Rattus_norvegicus.mRatBN7.2.filtered.gtf

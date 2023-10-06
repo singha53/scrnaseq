@@ -6,6 +6,7 @@ scrnaseq_files
 .Rhistory
 sample_reads/
 ref/rat_ref
+ref/Rattus_norvegicus_mRatBN7_2/
 fastqc_results/
 fastqc/scrnaseq
 **.zip
