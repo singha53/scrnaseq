@@ -1,0 +1,22 @@
+#!/bin/bash
+#PBS -l walltime=5:00:00,select=1:ncpus=12:mem=64gb
+#PBS -A st-singha53-1
+#PBS -N cellranger
+#PBS -M amrit.singh@ubc.ca
+#PBS -o ocellranger^array_index^.txt
+#PBS -e ecellranger^array_index^.txt
+#PBS -J 0-3:1
+  
+#############################################################################
+
+module load apptainer
+
+DATA=/project/st-singha53-1/singha53/scrnaseq/data/
+cd $PBS_O_WORKDIR
+
+cat ${PBS_ARRAY_INDEX}.txt
+
+make split
+apptainer run -B $DATA /project/st-singha53-1/singha53/scrnaseq/scrnaseq.sif \
+  cellranger -h \
+  exit

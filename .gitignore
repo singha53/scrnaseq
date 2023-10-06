@@ -14,3 +14,4 @@ fastqc/scrnaseq
 **.sif 
 e*.txt
 o*.txt
+cellranger/*.txt
