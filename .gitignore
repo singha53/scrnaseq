@@ -22,3 +22,4 @@ e*.txt
 o*.txt
 cellranger/*.txt
 cellranger/GEX*
+cellranger/fentanyl/
