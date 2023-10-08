@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help
-FASTQ_FILES=$(find $1 -name *.fq)
+FASTQ_FILES=$(find $1 -name *.fastq)
 echo $FASTQ_FILES
 OUTPUT=fastqc_results
 mkdir -p $OUTPUT

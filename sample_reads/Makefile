@@ -1,16 +1,21 @@
 install:
 	git clone https://github.com/lh3/seqtk.git; cd seqtk; make
+
+#how to name fastq files: 
+# [Sample Name]_S1_L00[Lane Number]_[Read Type]_001.fastq.gz
+#https://kb.10xgenomics.com/hc/en-us/articles/115003802691
+
 	
 sample:
-	mkdir -p R3 R4 R15 R16
-	seqtk/seqtk sample -s11 GEX-R15-AS-12162022_S3_L001_R1_001.fastq.gz 10000 > R15/rat15_R1.fq
-	seqtk/seqtk sample -s11 GEX-R15-AS-12162022_S3_L001_R2_001.fastq.gz 10000 > R15/rat15_R2.fq
-	seqtk/seqtk sample -s11 GEX-R16-AS-12162022_S4_L001_R1_001.fastq.gz 10000 > R16/rat16_R1.fq
-	seqtk/seqtk sample -s11 GEX-R16-AS-12162022_S4_L001_R2_001.fastq.gz 10000 > R16/rat16_R2.fq
-	seqtk/seqtk sample -s11 GEX-R3-AS-12162022_S1_L001_R1_001.fastq.gz 10000 > R3/rat3_R1.fq
-	seqtk/seqtk sample -s11 GEX-R3-AS-12162022_S1_L001_R2_001.fastq.gz 10000 > R3/rat3_R2.fq
-	seqtk/seqtk sample -s11 GEX-R4-AS-12162022_S2_L001_R1_001.fastq.gz 10000 > R4/rat4_R1.fq
-	seqtk/seqtk sample -s11 GEX-R4-AS-12162022_S2_L001_R2_001.fastq.gz 10000 > R4/rat4_R2.fq
+	mkdir -p GEX-R3-AS-12162022 GEX-R4-AS-12162022 GEX-R15-AS-12162022 GEX-R16-AS-12162022
+	seqtk/seqtk sample -s11 GEX-R3-AS-12162022_S1_L001_R1_001.fastq.gz 10000 > GEX-R3-AS-12162022/GEX-R3-AS-12162022_S1_L001_R1_001.fastq
+	seqtk/seqtk sample -s11 GEX-R3-AS-12162022_S1_L001_R2_001.fastq.gz 10000 > GEX-R3-AS-12162022/GEX-R3-AS-12162022_S1_L001_R2_001.fastq
+	seqtk/seqtk sample -s11 GEX-R4-AS-12162022_S2_L001_R1_001.fastq.gz 10000 > GEX-R4-AS-12162022/GEX-R4-AS-12162022_S2_L001_R1_001.fastq
+	seqtk/seqtk sample -s11 GEX-R4-AS-12162022_S2_L001_R2_001.fastq.gz 10000 > GEX-R4-AS-12162022/GEX-R4-AS-12162022_S2_L001_R2_001.fastq
+	seqtk/seqtk sample -s11 GEX-R15-AS-12162022_S3_L001_R1_001.fastq.gz 10000 > GEX-R15-AS-12162022/GEX-R15-AS-12162022_S3_L001_R1_001.fastq
+	seqtk/seqtk sample -s11 GEX-R15-AS-12162022_S3_L001_R2_001.fastq.gz 10000 > GEX-R15-AS-12162022/GEX-R15-AS-12162022_S3_L001_R2_001.fastq
+	seqtk/seqtk sample -s11 GEX-R16-AS-12162022_S4_L001_R1_001.fastq.gz 10000 > GEX-R16-AS-12162022/GEX-R16-AS-12162022_S4_L001_R1_001.fastq
+	seqtk/seqtk sample -s11 GEX-R16-AS-12162022_S4_L001_R2_001.fastq.gz 10000 > GEX-R16-AS-12162022/GEX-R16-AS-12162022_S4_L001_R2_001.fastq
 
 data:
-	mv R3/ R4/ R15/ R16/ ../data/
+	mv GEX-R3-AS-12162022/ GEX-R4-AS-12162022/ GEX-R15-AS-12162022/ GEX-R16-AS-12162022/ ../data/

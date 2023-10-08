@@ -1,8 +1,22 @@
-#!/bin/sh
+#!/bin/bash
 
-files=$(ls /project/st-singha53-1/datasets/fentanyl/scrnaseq)
-rats=(R15 R16 R3 R4)
 
-for key in ${!rats[@]}; do
-  printf -- '%s\n' "${files[@]}" | grep ${rats[$key]} > $key.txt
+# rats = ( GEX-R3-AS-12162022 GEX-R15-AS-12162022 GEX-R16-AS-12162022 GEX-R4-AS-12162022)
+
+for rat in "GEX-R3-AS-12162022" "GEX-R15-AS-12162022" "GEX-R16-AS-12162022" "GEX-R4-AS-12162022"
+do
+  cellranger count --id=${rat} \
+    --fastqs=../data/${rat}/ \
+    --sample=${rat} \
+    --transcriptome=../ref/Rattus_norvegicus_mRatBN7_2 \
+    --chemistry "ARC-v1"
 done
+
+# for rat in ${rats[@]}; do
+#   cellranger count --id=${rat} \
+#     --fastqs=../data/${rat}/ \
+#     --sample=${rat} \
+#     --transcriptome=../ref/Rattus_norvegicus_mRatBN7_2 \
+#     --chemistry "ARC-v1"
+# done
+

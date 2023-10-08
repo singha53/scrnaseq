@@ -1,2 +1,2 @@
-split:
-	sh split_fastqs.sh
+align_count:
+	sh cellranger.sh
