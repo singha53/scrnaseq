@@ -1,0 +1,49 @@
+## FASTQ files
+
+<img src="https://www.drive5.com/usearch/manual/fastq_fig.jpg"/>
+
+[Quality score encoding](https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/QualityScoreEncoding_swBS.htm)
+
+## Demo - scRNAseq data processing
+
+### 1. count number of reads in fastq files
+
+-   list fastq files
+
+```{bash, echo = TRUE}
+ls -a data
+```
+
+-   count number of reads in fastq files
+
+```{bash, echo = TRUE}
+for file in GEX-R3-AS-12162022_S1_L001_R1_001.fastq.gz GEX-R3-AS-12162022_S1_L001_R1_001.fastq.gz
+do
+  echo $file
+  echo $(cat ./data/$file|wc -l)/4|bc
+done
+```
+
+## Demo - scRNAseq data processing
+
+### 2. Run [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+
+-   we will use a linux based docker image for [fastq](https://hub.docker.com/r/staphb/fastqc/dockerfile), since ARC is linux-based
+
+```{bash}
+cat Dockerfile
+```
+
+## Demo - scRNAseq data processing
+
+### 2. Run [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+
+-   create Makefile to run docker image
+
+```{bash}
+cat fastqc/Makefile
+```
+
+```{bash, eval=FALSE}
+make fastqc
+```

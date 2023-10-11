@@ -5,95 +5,16 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 format:
   revealjs:
     theme: dark
-  html:
-    code-fold: true
 editor: visual
 ---
 
-## Overview
+{{< include overview.qmd >}} 
 
-### sc(bulk) RNA-seq overview
+{{< include fastqc/fastqc.qmd >}} 
 
--   [bulk RNA-seq](https://www.youtube.com/watch?v=tlf6wYJrwKY&ab_channel=StatQuestwithJoshStarmer)
--   [single-cell RNAseq by 10x Genomics](https://www.youtube.com/watch?v=9YXRoaQyixQ&ab_channel=10xGenomics)
+{{< include ref/ref.qmd >}} 
 
-## scRNAseq data processing
-
-<img src="https://www.sc-best-practices.org/_images/overview_raw_data_processing.jpg"/>
-
--   determine the string of letters of each read
-
-See Raw data processing [here](https://www.sc-best-practices.org/introduction/raw_data_processing.html) and [here](https://biocellgen-public.svi.edu.au/mig_2019_scrnaseq-workshop/processing-raw-scrna-seq-data.html)
-
-## FASTQ files
-
-<img src="https://www.drive5.com/usearch/manual/fastq_fig.jpg"/>
-
-[Quality score encoding](https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/QualityScoreEncoding_swBS.htm)
-
-## Demo - scRNAseq data processing
-
-### 1. count number of reads in fastq files
-
--   list fastq failes
-
-```{bash, echo = TRUE}
-ls -a data
-```
-
--   count number of reads in fastq files
-
-```{bash, echo = TRUE}
-for file in GEX-R3-AS-12162022_S1_L001_R1_001.fastq.gz GEX-R3-AS-12162022_S1_L001_R1_001.fastq.gz
-do
-  echo $file
-  echo $(cat ./data/$file|wc -l)/4|bc
-done
-```
-
-## Demo - scRNAseq data processing
-
-### 2. Run [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
-
--   we will use a linux based docker image for [fastq](https://hub.docker.com/r/staphb/fastqc/dockerfile), since ARC is linux-based
-
-```{bash}
-cat Dockerfile
-```
-
-## Demo - scRNAseq data processing
-
-### 2. Run [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
-
--   create Makefile to run docker image
-
-```{bash}
-cat fastqc/Makefile
-```
-
-```{bash, eval=FALSE}
-make fastqc
-```
-
-## Sockeye workflow
-
-<img src="docs/gitflow.png"/>
-
-
-## Create custom reference
-
-1. First, locate the reference genome FASTA and GTF files for your species. If the species is available from the Ensembl database, we recommend using the files from there. The GTF files from Ensembl contain optional tags that make filtering easy.
-
-[Ensemble](https://useast.ensembl.org/index.html)
-[10x custom ref](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/tutorial_mr)
-
-## Analysis
-
--   [Single-Cell RNA-Seq Analysis with Python](https://www.youtube.com/watch?v=jwSPTgF9ESQ&list=PLOXLw2he7kYpqAL0Gzco5NkA2DpewtluK&ab_channel=UCLAQCBioCollaboratory)
-
-```{r}
-1 + 1
-```
+{{< include cellranger/cellranger.qmd >}}
 
 ## References
 
@@ -101,3 +22,4 @@ make fastqc
 2.  [Broad Institute](https://www.singlecellcourse.org/index.html)
 3.  [Univ of Cambridge](https://www.singlecellcourse.org/index.html)
 4.  [Single-Cell RNA-Seq Analysis with Python](https://www.youtube.com/watch?v=jwSPTgF9ESQ&list=PLOXLw2he7kYpqAL0Gzco5NkA2DpewtluK&ab_channel=UCLAQCBioCollaboratory)
+5.  [Single-Cell RNA-Seq Analysis with Python](https://www.youtube.com/watch?v=jwSPTgF9ESQ&list=PLOXLw2he7kYpqAL0Gzco5NkA2DpewtluK&ab_channel=UCLAQCBioCollaboratory)

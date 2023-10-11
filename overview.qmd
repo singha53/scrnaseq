@@ -1,0 +1,16 @@
+### sc(bulk) RNA-seq overview
+
+-   [bulk RNA-seq](https://www.youtube.com/watch?v=tlf6wYJrwKY&ab_channel=StatQuestwithJoshStarmer)
+-   [single-cell RNAseq by 10x Genomics](https://www.youtube.com/watch?v=9YXRoaQyixQ&ab_channel=10xGenomics)
+
+## scRNAseq data processing
+
+<img src="https://www.sc-best-practices.org/_images/overview_raw_data_processing.jpg"/>
+
+-   determine the string of letters of each read
+
+See Raw data processing [here](https://www.sc-best-practices.org/introduction/raw_data_processing.html) and [here](https://biocellgen-public.svi.edu.au/mig_2019_scrnaseq-workshop/processing-raw-scrna-seq-data.html)
+
+## Sockeye workflow
+
+<img src="docs/gitflow.png"/>
